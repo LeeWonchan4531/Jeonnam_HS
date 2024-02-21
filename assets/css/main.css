@@ -1,0 +1,199 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: rgb(0, 0, 0);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    /* z-index를 높게 설정하여 다른 요소들 위에 오도록 설정합니다. */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header img {
+    filter: brightness(1.4);
+}
+
+nav span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media all and (min-width: 768px){
+ .intro {
+    margin-right: 30%;
+    margin-left: 30%;
+ }
+ .complain {
+    margin-right: 30%;
+    margin-left: 30%;
+ }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* viewport height를 100%로 설정해서 화면에 꽉 차게 설정 */
+    z-index: 1;
+    /* z-index를 낮게 설정하여 다른 요소들 아래에 오도록 설정합니다. */
+}
+
+.bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.content {
+    position: relative;
+    top: 90vh;
+    /* viewport height를 100%로 설정해서 이미지 아래에 위치하도록 설정 */
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    position: relative;
+    top: 40vh;
+    /* viewport height를 100%로 설정해서 이미지 아래에 위치하도록 설정 */
+    padding: 2rem;
+    z-index: 5;
+    animation: fadeInUp 1s;
+}
+
+.intro {
+    display: flex;
+    margin-bottom: 70px;
+}
+
+.intro p {
+    text-align: left;
+}
+
+.intro img {
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
+.intro p {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.content img {
+    max-width: 500px;
+
+}
+
+.complain {
+    margin-top: 100px;
+}
+
+.complain h1 {
+    margin: 0;
+}
+
+.complain p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+
+table {
+    width: 100%;
+    border: 1px solid #444444;
+}
+
+th,
+td {
+    border: 1px solid #444444;
+}
+
+footer {
+    margin-top: 100px;
+}
+footer p {
+    margin: 0;
+}
+
+textarea {
+    width: 95%;
+    background-color: #000;
+    padding: 3px;
+    color: #fff;
+    border: 1px solid #8b8b8b;
+    border-radius: 7px;
+    font-size: 15px;
+    min-height: 2rem;
+    overflow-y: hidden;
+    resize: none;
+}

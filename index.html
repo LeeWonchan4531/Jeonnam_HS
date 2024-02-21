@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script async src="https://tracker.searchai.me/script.js" data-website-id="c99f0370-b33b-417f-8633-021344ed92a2"></script>
+    <title>전남고등학교 - 학생회</title>
+</head>
+
+<body>
+    <header>
+        <img src="/assets/img/logo.png" width="200px">
+        <nav>
+            <a href="javascript:alert('준비 중');"><span>학생증</span></a>
+            <a href="#alarm"><span>알림</span></a>
+            <a href="#complain"><span>건의함</span></a>
+        </nav>
+    </header>
+    <div class="bg-img"><img src="/assets/img/wallpaper.jpg"></div>
+
+    <div class="title">
+        <h1>안녕하세요. 전남고등학교 학생회 입니다.</h1>
+        <h4>상호간의 소통을 중요시하는 학생회입니다!</h4>
+    </div>
+
+    <div class="content">
+        <h1>학생회장 소개</h1>
+        <div class="intro">
+            <img src="/assets/img/president.jpg">
+            <p>전남고등학교를 대표하는 회장으로 선출된 것에 감사하며,<br>모든 의견을 존중하고 어려움 속에서도 소신을 지키며 학우들을 위한 학생회장이 되겠습니다.</p>
+        </div>
+        <h1>직급 체계</h1>
+        <img src="/assets/img/str.png" width="100%">
+        <div class="complain" id="alarm">
+            <h1>학생회 알림</h1>
+            <p>학생회의 최신소식을 알아보세요!</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>날짜</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>내용 없음</td>
+                        <td>내용 없음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="complain" id="complain">
+            <h1>건의함</h1>
+            <p>학교 생활이 불편 하신가요?</p>
+            <form action="logic.php" method="POST" onsubmit="return confirmChanges();">
+                <textarea placeholder="학교생활 중 불편했던거나, 했으면 하는 행사를 적어주세요! 적극반영 하겠습니다." onkeydown="resize(this)" required
+                    name="complain" onkeyup="resize(this)"></textarea>
+                <button class="btn-hover color-2" type="submit">건의하기</button>
+            </form>
+
+        </div>
+        <footer>
+            <p>Jeonnam High School Conucil © 2024</p>
+        </footer>
+    </div>
+    <script>
+
+        function resize(obj) {
+            obj.style.height = '1px';
+            obj.style.height = (obj.scrollHeight) + 'px';
+        }
+    
+        function confirmChanges() {
+        var article = document.querySelector('textarea[name="complain"]').value;
+    
+        // 내용입력이 900자를 초과하는지 검사
+        if (article.length > 900) {
+            alert("메시지 내용은 900자까지만 담을 수 있어요.\n조금만 더 요약하여 작성해주세요.");
+            return false;
+        }
+    
+        var confirmMessage = "수정, 삭제가 어려우니, 다시한번 확인해주세요.\n" +
+            "내용: " + article;
+    
+        return confirm(confirmMessage);
+    }
+
+    </script>
+</body>
+
+</html>
